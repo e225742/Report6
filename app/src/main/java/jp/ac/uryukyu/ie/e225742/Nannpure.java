@@ -62,6 +62,35 @@ public class Nannpure{
         }
     }
 
+    public int Level(String le){
+        /**
+         * 難易度設定
+         * Easy ,Nomal,Hardの３種類で穴をあける数を調整
+         * int型で穴の数を返す
+         */
+        int[] E = {20, 21, 22, 23, 24};
+        int Elng = E.length;
+        int easy = rnd.nextInt(Elng);
+        if(le == "Easy"){
+            return E[easy];
+        }
+
+        int[] N = {30, 31, 32, 33, 34};
+        int Nlng = N.length;
+        int nomal = rnd.nextInt(Nlng);
+        if(le == "Nomal"){
+            return N[nomal];
+        }
+
+        int[] H = {40, 41, 42, 43, 44};
+        int Hlng = H.length;
+        int hard = rnd.nextInt(Hlng);
+        if(le == "Hard"){
+            return H[hard];
+        }
+        return hard;
+    }
+
     public void ProblemGeneration(){//問題作成
         /**
          * 完成表にランダムで穴をあける
@@ -75,9 +104,9 @@ public class Nannpure{
                 list.add(a[i][j]);
             }
         }
-        int num = 10;
+        
         int lng = list.size();
-
+        int num = Level("Easy");
         for(int x = 0; x < num; x++){
             /**
              * ランダムに出力した数字の要素を０に置き換え
