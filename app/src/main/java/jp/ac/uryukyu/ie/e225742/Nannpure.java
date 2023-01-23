@@ -82,7 +82,7 @@ public class Nannpure{
             return N[nomal];
         }
 
-        int[] H = {40, 41, 42, 43, 44};
+        int[] H = {45};
         int Hlng = H.length;
         int hard = rnd.nextInt(Hlng);
         if(le == "Hard"){
